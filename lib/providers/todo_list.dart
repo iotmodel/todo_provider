@@ -78,7 +78,7 @@ class TodoList with ChangeNotifier {
   }
 
   void removeTodo(Todo todo) {
-    final newTodos = _state.todos.where((todo) => todo.id != todo.id).toList();
+    final newTodos = _state.todos.where((Todo t) => t.id != todo.id).toList();
 
     _state = _state.copyWith(todos: newTodos);
     notifyListeners();
